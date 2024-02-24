@@ -2,6 +2,8 @@
 from classes.ActorCritic import ActorCritic
 import multiprocessing as mp
 from classes.Training import Training
+import warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning)
 mp.set_start_method('spawn', force=True)
 
 
@@ -15,7 +17,7 @@ def main():
 
     params = {
         'epochs': 1000,
-        'n_workers': 14
+        'n_workers': 13
     }
 
     counter = mp.Value('i', 0)
